@@ -1,0 +1,25 @@
+{
+    "name": "contensio/plugin-newsletter",
+    "label": "Newsletter",
+    "description": "Collect email subscribers with an embeddable signup form. Optional double opt-in, unsubscribe tokens, admin list with search and CSV export.",
+    "author": "Contensio",
+    "author_url": "https://contensio.com",
+    "version": "1.0.0",
+    "provider": "Contensio\\Newsletter\\NewsletterServiceProvider",
+    "autoload": {
+        "psr-4": {
+            "Contensio\\Newsletter\\": "src/"
+        }
+    },
+    "requires": {
+        "cms": "^2.0"
+    },
+    "menu": {
+        "placement": "tools",
+        "label": "Newsletter",
+        "icon": "bi-envelope-at",
+        "route": "newsletter.subscribers",
+        "permission": "plugins.configure"
+    },
+    "removable": true
+}
