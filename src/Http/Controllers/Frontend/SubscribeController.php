@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Newsletter — Contensio plugin.
+ * Newsletter - Contensio plugin.
  * https://contensio.com
  *
  * @copyright   Copyright (c) 2026 Iosif Gabriel Chimilevschi
@@ -34,7 +34,7 @@ class SubscribeController extends Controller
 
         if ($existing) {
             if ($existing->isActive()) {
-                // Already subscribed — return success silently to prevent email enumeration
+                // Already subscribed - return success silently to prevent email enumeration
                 return $this->successResponse($request, $config);
             }
 
@@ -46,7 +46,7 @@ class SubscribeController extends Controller
                 return $this->successResponse($request, $config);
             }
 
-            // Was unsubscribed — reactivate
+            // Was unsubscribed - reactivate
             $existing->update([
                 'name'             => $name ?: $existing->name,
                 'status'           => $config['double_optin'] ? Subscriber::STATUS_PENDING : Subscriber::STATUS_ACTIVE,
@@ -87,12 +87,12 @@ class SubscribeController extends Controller
             ->first();
 
         if (! $subscriber) {
-            return view('newsletter::public.confirm', ['success' => false]);
+            return view('contensio-newsletter::public.confirm', ['success' => false]);
         }
 
         $subscriber->confirm();
 
-        return view('newsletter::public.confirm', ['success' => true, 'subscriber' => $subscriber]);
+        return view('contensio-newsletter::public.confirm', ['success' => true, 'subscriber' => $subscriber]);
     }
 
     public function unsubscribe(string $token)
@@ -100,14 +100,14 @@ class SubscribeController extends Controller
         $subscriber = Subscriber::where('token', $token)->first();
 
         if (! $subscriber) {
-            return view('newsletter::public.unsubscribe', ['success' => false]);
+            return view('contensio-newsletter::public.unsubscribe', ['success' => false]);
         }
 
         if ($subscriber->isActive() || $subscriber->isPending()) {
             $subscriber->unsubscribe();
         }
 
-        return view('newsletter::public.unsubscribe', ['success' => true]);
+        return view('contensio-newsletter::public.unsubscribe', ['success' => true]);
     }
 
     // ── Private helpers ───────────────────────────────────────────────────────

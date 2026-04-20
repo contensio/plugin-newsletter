@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Newsletter — Contensio plugin.
+ * Newsletter - Contensio plugin.
  * https://contensio.com
  *
  * @copyright   Copyright (c) 2026 Iosif Gabriel Chimilevschi
@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
 
 class Subscriber extends Model
 {
-    protected $table = 'newsletter_subscribers';
+    protected $table = 'contensio_newsletter_subscribers';
 
     protected $fillable = [
         'email',

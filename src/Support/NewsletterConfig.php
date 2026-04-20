@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Newsletter — Contensio plugin.
+ * Newsletter - Contensio plugin.
  * https://contensio.com
  *
  * @copyright   Copyright (c) 2026 Iosif Gabriel Chimilevschi

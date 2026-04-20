@@ -6,7 +6,7 @@
 <div class="p-6 max-w-2xl">
 
     <div class="flex items-center gap-3 mb-6">
-        <a href="{{ route('newsletter.subscribers') }}"
+        <a href="{{ route('contensio-newsletter.subscribers') }}"
            class="text-gray-400 hover:text-gray-600 transition-colors">
             <i class="bi bi-arrow-left text-lg"></i>
         </a>
@@ -30,7 +30,7 @@
     </div>
     @endif
 
-    <form method="POST" action="{{ route('newsletter.settings.save') }}" class="space-y-6">
+    <form method="POST" action="{{ route('contensio-newsletter.settings.save') }}" class="space-y-6">
         @csrf
 
         {{-- Double opt-in --}}
@@ -43,7 +43,7 @@
                     <span class="font-semibold text-gray-900">Double opt-in</span>
                     <p class="text-sm text-gray-500 mt-0.5">
                         When enabled, subscribers receive a confirmation email and are only added as active after clicking the link.
-                        Recommended — reduces spam and fake signups.
+                        Recommended - reduces spam and fake signups.
                     </p>
                 </div>
             </label>

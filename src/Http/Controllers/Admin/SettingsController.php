@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Newsletter — Contensio plugin.
+ * Newsletter - Contensio plugin.
  * https://contensio.com
  *
  * @copyright   Copyright (c) 2026 Iosif Gabriel Chimilevschi
@@ -20,7 +20,7 @@ class SettingsController extends Controller
     {
         $config = NewsletterConfig::all();
 
-        return view('newsletter::admin.settings', compact('config'));
+        return view('contensio-newsletter::admin.settings', compact('config'));
     }
 
     public function save(Request $request)
@@ -38,6 +38,6 @@ class SettingsController extends Controller
 
         NewsletterConfig::save($request->all());
 
-        return redirect()->route('newsletter.settings')->with('success', 'Newsletter settings saved.');
+        return redirect()->route('contensio-newsletter.settings')->with('success', 'Newsletter settings saved.');
     }
 }

@@ -1,6 +1,6 @@
 {
     "name": "contensio/plugin-newsletter",
-    "description": "Newsletter subscriptions for Contensio — collect emails, double opt-in, CSV export, unsubscribe tokens.",
+    "description": "Newsletter subscriptions for Contensio - collect emails, double opt-in, CSV export, unsubscribe tokens.",
     "type": "library",
     "license": "AGPL-3.0-or-later",
     "keywords": ["contensio", "plugin", "newsletter", "email", "subscribers"],

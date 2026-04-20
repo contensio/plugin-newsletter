@@ -18,7 +18,7 @@
     <p class="text-ink-500 text-lg mb-5">{{ $nlConfig['form_description'] }}</p>
     @endif
 
-    <form method="POST" action="{{ route('newsletter.subscribe') }}" class="flex flex-col sm:flex-row gap-3">
+    <form method="POST" action="{{ route('contensio-newsletter.subscribe') }}" class="flex flex-col sm:flex-row gap-3">
         @csrf
         <input type="email" name="email" required
                placeholder="{{ $nlConfig['form_placeholder'] }}"

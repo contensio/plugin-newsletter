@@ -1,4 +1,4 @@
-# Newsletter Subscriptions — Contensio Plugin
+# Newsletter Subscriptions - Contensio Plugin
 
 Collect email subscribers with an embeddable signup form. Supports double opt-in, unique unsubscribe tokens, and a full admin dashboard with search and CSV export.
 
@@ -6,15 +6,15 @@ Collect email subscribers with an embeddable signup form. Supports double opt-in
 
 ## Features
 
-- **Signup form** — drop anywhere in your theme with a single `@include`
-- **Double opt-in** (default on) — sends a confirmation email; subscriber activates only after clicking the link
-- **Unsubscribe tokens** — every subscriber gets a unique token; one-click unsubscribe at `/newsletter/unsubscribe/{token}`
-- **Resubscribe handling** — unsubscribed users who sign up again go through opt-in again automatically
-- **Admin subscriber list** — search by email or name, filter by status (Active / Pending / Unsubscribed), paginated
-- **CSV export** — download all or filtered subscribers; UTF-8 BOM included for Excel compatibility
-- **Per-row delete** — remove individual subscribers from the admin
-- **Configurable form copy** — title, description, placeholder, button label, and success messages all editable from settings
-- **Sender override** — set a custom From name and email for confirmation emails
+- **Signup form** - drop anywhere in your theme with a single `@include`
+- **Double opt-in** (default on) - sends a confirmation email; subscriber activates only after clicking the link
+- **Unsubscribe tokens** - every subscriber gets a unique token; one-click unsubscribe at `/newsletter/unsubscribe/{token}`
+- **Resubscribe handling** - unsubscribed users who sign up again go through opt-in again automatically
+- **Admin subscriber list** - search by email or name, filter by status (Active / Pending / Unsubscribed), paginated
+- **CSV export** - download all or filtered subscribers; UTF-8 BOM included for Excel compatibility
+- **Per-row delete** - remove individual subscribers from the admin
+- **Configurable form copy** - title, description, placeholder, button label, and success messages all editable from settings
+- **Sender override** - set a custom From name and email for confirmation emails
 
 ---
 
@@ -60,7 +60,7 @@ Add the form anywhere in your theme:
 @include('newsletter::partials.subscribe-form')
 ```
 
-The form reads its copy (title, description, button label) from the plugin settings — no hardcoded strings.
+The form reads its copy (title, description, button label) from the plugin settings - no hardcoded strings.
 
 The form posts to `/newsletter/subscribe` and returns to the same page with a `newsletter_success` session flash on success.
 
@@ -128,4 +128,4 @@ Creates one table: `newsletter_subscribers`
 
 ## License
 
-AGPL-3.0-or-later — see [LICENSE](LICENSE).
+AGPL-3.0-or-later - see [LICENSE](LICENSE).

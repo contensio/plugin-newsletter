@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Newsletter — Contensio plugin.
+ * Newsletter - Contensio plugin.
  * https://contensio.com
  *
  * @copyright   Copyright (c) 2026 Iosif Gabriel Chimilevschi
@@ -44,7 +44,7 @@ class SubscriberController extends Controller
             'unsubscribed' => Subscriber::where('status', 'unsubscribed')->count(),
         ];
 
-        return view('newsletter::admin.subscribers', compact('subscribers', 'counts', 'status', 'search'));
+        return view('contensio-newsletter::admin.subscribers', compact('subscribers', 'counts', 'status', 'search'));
     }
 
     public function destroy(int $id)

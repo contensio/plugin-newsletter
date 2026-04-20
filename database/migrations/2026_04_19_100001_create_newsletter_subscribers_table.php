@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('newsletter_subscribers', function (Blueprint $table) {
+        Schema::create('contensio_newsletter_subscribers', function (Blueprint $table) {
             $table->id();
             $table->string('email', 255)->unique();
             $table->string('name', 150)->nullable();
@@ -24,6 +24,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('newsletter_subscribers');
+        Schema::dropIfExists('contensio_newsletter_subscribers');
     }
 };

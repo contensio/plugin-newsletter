@@ -12,12 +12,12 @@
             <p class="mt-1 text-gray-500">Manage your email subscribers.</p>
         </div>
         <div class="flex items-center gap-3">
-            <a href="{{ route('newsletter.export', array_filter(['status' => $status !== 'all' ? $status : null])) }}"
+            <a href="{{ route('contensio-newsletter.export', array_filter(['status' => $status !== 'all' ? $status : null])) }}"
                class="inline-flex items-center gap-2 border border-gray-300 bg-white hover:bg-gray-50 text-gray-700 text-sm font-medium px-4 py-2 rounded-lg transition-colors">
                 <i class="bi bi-download"></i>
                 Export CSV
             </a>
-            <a href="{{ route('newsletter.settings') }}"
+            <a href="{{ route('contensio-newsletter.settings') }}"
                class="inline-flex items-center gap-2 border border-gray-300 bg-white hover:bg-gray-50 text-gray-700 text-sm font-medium px-4 py-2 rounded-lg transition-colors">
                 <i class="bi bi-gear"></i>
                 Settings
@@ -39,7 +39,7 @@
             ['label' => 'Pending',       'count' => $counts['pending'],      'status' => 'pending',      'color' => 'text-amber-700'],
             ['label' => 'Unsubscribed',  'count' => $counts['unsubscribed'], 'status' => 'unsubscribed', 'color' => 'text-red-700'],
         ] as $stat)
-        <a href="{{ route('newsletter.subscribers', ['status' => $stat['status'], 'search' => $search ?: null]) }}"
+        <a href="{{ route('contensio-newsletter.subscribers', ['status' => $stat['status'], 'search' => $search ?: null]) }}"
            class="bg-white border {{ $status === $stat['status'] ? 'border-ember-400 ring-1 ring-ember-400' : 'border-gray-200' }} rounded-xl p-5 hover:border-ember-300 transition-colors">
             <p class="text-sm text-gray-500 font-medium">{{ $stat['label'] }}</p>
             <p class="mt-1 text-2xl font-bold {{ $stat['color'] }}">{{ number_format($stat['count']) }}</p>
@@ -48,7 +48,7 @@
     </div>
 
     {{-- Search + filter bar --}}
-    <form method="GET" action="{{ route('newsletter.subscribers') }}" class="flex gap-3 mb-4">
+    <form method="GET" action="{{ route('contensio-newsletter.subscribers') }}" class="flex gap-3 mb-4">
         <input type="hidden" name="status" value="{{ $status }}">
         <div class="relative flex-1 max-w-md">
             <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
@@ -62,7 +62,7 @@
             Search
         </button>
         @if($search)
-        <a href="{{ route('newsletter.subscribers', ['status' => $status]) }}"
+        <a href="{{ route('contensio-newsletter.subscribers', ['status' => $status]) }}"
            class="border border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-500 text-sm px-3 py-2 rounded-lg transition-colors">
             Clear
         </a>
@@ -113,7 +113,7 @@
                 @endphp
                 <tr class="hover:bg-gray-50 transition-colors">
                     <td class="px-5 py-3.5 font-medium text-gray-900">{{ $sub->email }}</td>
-                    <td class="px-5 py-3.5 text-gray-600">{{ $sub->name ?: '—' }}</td>
+                    <td class="px-5 py-3.5 text-gray-600">{{ $sub->name ?: '-' }}</td>
                     <td class="px-5 py-3.5">
                         <span class="inline-block text-xs font-semibold px-2.5 py-1 rounded-full {{ $badgeClass }}">
                             {{ $badgeLabel }}
@@ -122,9 +122,9 @@
                     <td class="px-5 py-3.5 text-gray-500 whitespace-nowrap">
                         {{ $sub->created_at->format('M j, Y') }}
                     </td>
-                    <td class="px-5 py-3.5 text-gray-400 capitalize">{{ $sub->source ?: '—' }}</td>
+                    <td class="px-5 py-3.5 text-gray-400 capitalize">{{ $sub->source ?: '-' }}</td>
                     <td class="px-5 py-3.5 text-right">
-                        <form method="POST" action="{{ route('newsletter.subscriber.delete', $sub->id) }}"
+                        <form method="POST" action="{{ route('contensio-newsletter.subscriber.delete', $sub->id) }}"
                               onsubmit="return confirm('Delete {{ $sub->email }}? This cannot be undone.')">
                             @csrf
                             @method('DELETE')

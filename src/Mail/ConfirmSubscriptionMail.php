@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Newsletter — Contensio plugin.
+ * Newsletter - Contensio plugin.
  * https://contensio.com
  *
  * @copyright   Copyright (c) 2026 Iosif Gabriel Chimilevschi
@@ -29,7 +29,7 @@ class ConfirmSubscriptionMail extends Mailable
         public readonly string     $fromName,
         public readonly string     $fromEmail,
     ) {
-        $this->confirmUrl = route('newsletter.confirm', $subscriber->token);
+        $this->confirmUrl = route('contensio-newsletter.confirm', $subscriber->token);
     }
 
     public function envelope(): Envelope
@@ -43,7 +43,7 @@ class ConfirmSubscriptionMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'newsletter::emails.confirm-subscription',
+            view: 'contensio-newsletter::emails.confirm-subscription',
         );
     }
 }
